@@ -15,10 +15,14 @@ const App = () => {
   }, [setFakeContacts]);
 
   return (
-    <div>
-      <header>Arcadia Contact Manager</header>
-      {fakeContacts && <ContactsDisplay contacts={fakeContacts} />}
-      <footer>Powered by Solar, Wind, and everything clean.</footer>
+    <div className="avenir border-box lh-copy">
+      <header className="f1 lh-title tc">Arcadia Contact Manager</header>
+      {fakeContacts && (
+        <ContactsDisplay className="lh-copy" contacts={fakeContacts} />
+      )}
+      <footer className="tc">
+        Powered by Solar, Wind, and everything clean.
+      </footer>
     </div>
   );
 };

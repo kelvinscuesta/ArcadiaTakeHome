@@ -1,14 +1,14 @@
 import React from 'react';
+import './styles.css';
 
 const Contact = (props) => {
   const { name, email, phone, id } = props;
 
   return (
-    <div>
-      <h3>{name}</h3>
-      <p>{email}</p>
-      <p>{phone}</p>
-      <p>{id}</p>
+    <div className="ba pa4 mb2 card">
+      <h3>Name: {name}</h3>
+      <p>Email: {email}</p>
+      <p>Phone: {phone}</p>
     </div>
   );
 };
