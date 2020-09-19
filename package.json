@@ -4,14 +4,30 @@
   "description": "Front End Exercise for Arcadia Power",
   "private": true,
   "license": "ISC",
+  "scripts": {
+    "dev": "parcel ./client/index.html",
+    "build": "parcel build ./client/index.html",
+    "start": "node server/ & parcel ./client/index.html"
+  },
   "dependencies": {
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "express": "4.16.3",
-    "faker": "^4.1.0"
+    "faker": "^4.1.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
   },
   "devDependencies": {
+    "@babel/core": "^7.11.6",
+    "@babel/preset-env": "^7.11.5",
+    "@babel/preset-react": "^7.10.4",
+    "eslint": "^7.9.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.20.6",
     "jest": "^24.9.0",
-    "node-fetch": "^2.6.0"
+    "node-fetch": "^2.6.0",
+    "parcel-bundler": "^1.12.4",
+    "prettier": "^2.1.2"
   }
 }
