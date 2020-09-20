@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Modal from '@material-ui/core/Modal';
+import ModalForm from './ModalForm';
 
 // depending on props we are either editing a contact or creating a new one
 
@@ -13,7 +14,7 @@ const ContactModal = (props) => {
   // create new contact if modalFunction is set to create
 
   return (
-    <>
+    <div>
       <button onClick={handleShow}>{props.modalFunction}</button>
       <Modal
         open={show}
@@ -21,9 +22,9 @@ const ContactModal = (props) => {
         aria-labelledby={`${props.modalFunction} contact box`}
         aria-labelledby="Input text in fields to edit or create a contact"
       >
-        <div>hello</div>
+        <ModalForm {...props} />
       </Modal>
-    </>
+    </div>
   );
 };
 
