@@ -25,7 +25,9 @@ const App = () => {
 
   return (
     <div className="avenir border-box lh-copy">
-      <header className="f1 lh-title tc">Arcadia Contact Manager</header>
+      <header className="lh-title tc">
+        <h1 className="f2">Arcadia Contact Manager</h1>
+      </header>
       {fakeContacts && (
         <ContactsDisplay
           className="lh-copy"

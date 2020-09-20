@@ -1,4 +1,5 @@
 import React from 'react';
+import ContactModal from '../Modal';
 import './styles.css';
 
 const Contact = (props) => {
@@ -9,6 +10,7 @@ const Contact = (props) => {
       <h3>Name: {name}</h3>
       <p>Email: {email}</p>
       <p>Phone: {phone}</p>
+      <ContactModal modalFunction="edit" {...props} />
       <button onClick={() => deleteContact(id)}>Delete contact</button>
     </div>
   );

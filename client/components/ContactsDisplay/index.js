@@ -2,7 +2,6 @@ import React from 'react';
 import Contact from '../Contact';
 import './styles.css';
 
-// will house the list of contacts
 const ContactsDisplay = (props) => {
   const { contacts, deleteContact } = props;
 
