@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import ContactModal from '../Modal';
 import './styles.css';
 

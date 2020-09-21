@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import ContactsDisplay from './components/ContactsDisplay';
+import ContactModal from './components/Modal';
 
 // for this project will just directly hit the server in development
 // I figure in production this endpoint would be built differently
@@ -42,6 +43,24 @@ const App = () => {
       .catch((err) => console.log('Request failed check err:', err));
   }
 
+  function createContact(createdFields) {
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(createdFields),
+    };
+
+    fetch(`${api}`, options)
+      .then((response) => response.json())
+      .then((data) => {
+        console.log('new contact created:', data);
+        const updatedContacts = [...fakeContacts, data];
+        setFakeContacts(updatedContacts);
+      });
+  }
+
   // originally having a problem proxying the client dev server to express
   // found out that parcel doesn't have the same dev configuration as webpack!
   useEffect(() => {
@@ -54,6 +73,7 @@ const App = () => {
     <div className="avenir border-box lh-copy">
       <header className="lh-title tc">
         <h1 className="f2">Arcadia Contact Manager</h1>
+        <ContactModal modalFunction={'create'} createContact={createContact} />
       </header>
       {fakeContacts && (
         <ContactsDisplay
