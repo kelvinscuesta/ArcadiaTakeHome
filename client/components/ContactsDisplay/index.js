@@ -3,7 +3,7 @@ import Contact from '../Contact';
 import './styles.css';
 
 const ContactsDisplay = (props) => {
-  const { contacts, deleteContact } = props;
+  const { contacts, deleteContact, editContact } = props;
 
   const contactsList = contacts.map(({ name, email, phone, id }) => (
     <Contact
@@ -13,6 +13,7 @@ const ContactsDisplay = (props) => {
       phone={phone}
       id={id}
       deleteContact={deleteContact}
+      editContact={editContact}
     />
   ));
 

@@ -13,12 +13,14 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 // populate a "DB" with 20 random contacts
-const contactsDB = new ContactsDB([...Array(20)].map(i => ({
-  name: faker.name.findName(),
-  email: faker.internet.exampleEmail(),
-  phone: faker.phone.phoneNumberFormat(),
-  id: faker.random.uuid(),
-})));
+const contactsDB = new ContactsDB(
+  [...Array(20)].map((i) => ({
+    name: faker.name.findName(),
+    email: faker.internet.exampleEmail(),
+    phone: faker.phone.phoneNumberFormat(),
+    id: faker.random.uuid(),
+  }))
+);
 
 // util to return an error if present, otherwise return expected data
 const responseHandler = ({ data, error, code }, res) => {
@@ -64,5 +66,7 @@ app.delete('/contacts/:id', (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Listening on port ${port}. Check http://localhost:${port}/contacts to ensure this is working properly.`)
+  console.log(
+    `Listening on port ${port}. Check http://localhost:${port}/contacts to ensure this is working properly.`
+  );
 });

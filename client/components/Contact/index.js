@@ -3,12 +3,7 @@ import ContactModal from '../Modal';
 import './styles.css';
 
 const Contact = (props) => {
-  // come back to reorganize state
-  const [name, setName] = useState(props.name);
-  const [email, setEmail] = useState(props.email);
-  const [phone, setPhone] = useState(props.phone);
-
-  const { id, deleteContact } = props;
+  const { id, deleteContact, editContact, name, email, phone } = props;
 
   return (
     <div className="ba pa4 mb2 card">
@@ -21,9 +16,7 @@ const Contact = (props) => {
         email={email}
         phone={phone}
         id={id}
-        setName={setName}
-        setEmail={setEmail}
-        setPhone={setPhone}
+        editContact={editContact}
       />
       <button onClick={() => deleteContact(id)}>Delete contact</button>
     </div>
