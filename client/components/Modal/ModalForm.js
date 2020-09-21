@@ -9,6 +9,7 @@ const ModalForm = React.forwardRef((props, ref) => {
     modalFunction,
     editContact,
     handleClose,
+    createContact,
   } = props;
 
   const [localName, setLocalName] = useState(name);
@@ -23,6 +24,15 @@ const ModalForm = React.forwardRef((props, ref) => {
   const sendEdits = () => {
     const edits = { name: localName, email: localEmail, phone: localPhone };
     editContact(id, edits);
+    handleClose();
+  };
+  const sendCreation = () => {
+    const createdContact = {
+      name: localName,
+      email: localEmail,
+      phone: localPhone,
+    };
+    createContact(createdContact);
     handleClose();
   };
 
@@ -43,7 +53,11 @@ const ModalForm = React.forwardRef((props, ref) => {
         Current Phone: {phone}
         <input type="text" name="phone" onChange={handleChange}></input>
       </label>
-      <button onClick={sendEdits}>Submit</button>
+      {editContact ? (
+        <button onClick={sendEdits}>Submit Edits</button>
+      ) : (
+        <button onClick={sendCreation}>Create new Contact</button>
+      )}
     </div>
   );
 });
