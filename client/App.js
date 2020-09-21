@@ -56,18 +56,21 @@ const App = () => {
       .then((response) => response.json())
       .then((data) => {
         console.log('new contact created:', data);
+        // NOTE: wonder if theres a better way to not mess up flow of state
         const updatedContacts = [...fakeContacts, data];
         setFakeContacts(updatedContacts);
       });
   }
 
-  // originally having a problem proxying the client dev server to express
+  // NOTE: originally having a problem proxying the client dev server to express
   // found out that parcel doesn't have the same dev configuration as webpack!
   useEffect(() => {
     fetch(`${api}`)
       .then((res) => res.json())
       .then((data) => setFakeContacts(data));
   }, [setFakeContacts]);
+
+  // TODO: Think of placement of create contact button
 
   return (
     <div className="avenir border-box lh-copy">

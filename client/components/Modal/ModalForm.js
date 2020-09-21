@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 const ModalForm = React.forwardRef((props, ref) => {
+  // ideally would only want the necessary props down here
   const {
     name,
     email,
@@ -21,6 +22,9 @@ const ModalForm = React.forwardRef((props, ref) => {
     if (e.target.name === 'email') setLocalEmail(e.target.value);
     if (e.target.name === 'phone') setLocalPhone(e.target.value);
   };
+
+  // TODO: consolidate these two functions into one based on what was sent to // modalFunction prop indicating an edit or creating a new contact
+
   const sendEdits = () => {
     const edits = { name: localName, email: localEmail, phone: localPhone };
     editContact(id, edits);
@@ -36,7 +40,9 @@ const ModalForm = React.forwardRef((props, ref) => {
     handleClose();
   };
 
-  // place a close button when coming back
+  // TODO: close button consideration and where it makes sense for focus to move
+
+  // TODO: change inputs to more semantic tags like email and phone number
 
   return (
     <div className="bg-washed-blue flex flex-column pa1 ttc" ref={ref}>

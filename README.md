@@ -30,4 +30,16 @@ Finally, if I have time I would like to write tests for the different React comp
 
 ### Final Notes
 
-**TO BE FILLED**
+- Finished all of the requirements with the multiple endpoints.
+- So 3 of the goals in getting the mvp and bundling front end and server together at least in development
+- Stretch Features/Thoughts/bugs I faced:
+  - Filter button
+  - Login/auth for multiple users and contacts
+  - State Management
+    - I brazenly started the assignment without paying much attention to state management. Thought I could just manage prop drilling just a few levels. It works, for now, but if I were to reorganize, definitely having a global store with context might make more sense and using the unique id as an easy way to find/parse which contact we are editing.
+  - More research on modals and which ui framework to use.
+    - Spent time considering the pros and cons to multiple implementations
+      - React Bootstrap vs Semantic UI vs Material UI
+      - Ended up going Material UI for Modal and small package size
+      - React bootstrap wanted me to include bootstrap which was overwriting how buttons were appearing
+  - More research into parcel and issues with proxying and async/await more new JS features.
