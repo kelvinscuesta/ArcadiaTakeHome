@@ -75,7 +75,7 @@ const App = () => {
   return (
     <div className="avenir border-box lh-copy">
       <header className="lh-title tc">
-        <h1 className="f2">Arcadia Contact Manager</h1>
+        <h1 className="f3 fw6">Arcadia Contact Manager</h1>
         <ContactModal modalFunction={'create'} createContact={createContact} />
       </header>
       {fakeContacts && (
@@ -86,7 +86,7 @@ const App = () => {
           editContact={editContact}
         />
       )}
-      <footer className="tc">
+      <footer className="f4 tc">
         Powered by Solar, Wind, and everything clean.
       </footer>
     </div>

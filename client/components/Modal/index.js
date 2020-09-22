@@ -19,7 +19,9 @@ const ContactModal = (props) => {
 
   return (
     <div>
-      <button onClick={handleShow}>{props.modalFunction}</button>
+      <button className="ttc" onClick={handleShow}>
+        {props.modalFunction}
+      </button>
       <Modal
         open={show}
         onClose={handleClose}
