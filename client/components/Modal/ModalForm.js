@@ -45,24 +45,51 @@ const ModalForm = React.forwardRef((props, ref) => {
   // TODO: change inputs to more semantic tags like email and phone number
 
   return (
-    <div className="bg-washed-blue flex flex-column pa1 ttc" ref={ref}>
+    <div className="bg-washed-green flex flex-column pa3 mv2 ttc" ref={ref}>
       <h3>{modalFunction} Contact</h3>
-      <label>
-        Current Name: {name}
-        <input type="text" name="name" onChange={handleChange}></input>
-      </label>
-      <label>
-        Current Email: {email}
-        <input type="text" name="email" onChange={handleChange}></input>
-      </label>
-      <label>
-        Current Phone: {phone}
-        <input type="text" name="phone" onChange={handleChange}></input>
-      </label>
+      <ul className="flex flex-column mv1 pa2 list">
+        <li className="pa1">
+          <label>
+            {modalFunction} Name:
+            <input
+              type="text"
+              name="name"
+              value={name}
+              onChange={handleChange}
+            ></input>
+          </label>
+        </li>
+        <li className="pa1">
+          <label>
+            {modalFunction} Email:
+            <input
+              type="text"
+              name="email"
+              value={email}
+              onChange={handleChange}
+            ></input>
+          </label>
+        </li>
+        <li className="pa1">
+          <label>
+            {modalFunction} Phone:
+            <input
+              type="text"
+              name="phone"
+              value={phone}
+              onChange={handleChange}
+            ></input>
+          </label>
+        </li>
+      </ul>
       {editContact ? (
-        <button onClick={sendEdits}>Submit Edits</button>
+        <button className="w4" onClick={sendEdits}>
+          Submit Edits
+        </button>
       ) : (
-        <button onClick={sendCreation}>Create new Contact</button>
+        <button className="w5" onClick={sendCreation}>
+          Create Contact
+        </button>
       )}
     </div>
   );
