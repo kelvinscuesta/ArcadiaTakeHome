@@ -43,3 +43,4 @@ Finally, if I have time I would like to write tests for the different React comp
       - Ended up going Material UI for Modal and small package size
       - React bootstrap wanted me to include bootstrap which was overwriting how buttons were appearing
   - More research into parcel and issues with proxying and async/await more new JS features.
+  - Without plan from the start for CSS/ mockup difficult to find best way of presenting the data!
